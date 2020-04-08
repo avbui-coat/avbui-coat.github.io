@@ -145,16 +145,19 @@ d3.csv(csvPath).then(csvData => {
 
     xLabelObject['healthcare'] = chartGroup.append('text')
         .attr('transform', `translate(${chartWidth/2}, ${chartHeight + chartMargins.top - 22})`)
+        .attr("fontsize", 12)
         .classed('active', true)
         .text('% of Households with Healthcare');
     
     xLabelObject['age'] = chartGroup.append('text')
         .attr('transform', `translate(${chartWidth/2}, ${chartHeight + chartMargins.top - 12})`)
+        .attr("fontsize", 12)
         .classed('inactive', true)
         .text('Average Household Age');
 
     xLabelObject['income'] = chartGroup.append('text')
         .attr('transform', `translate(${chartWidth/2}, ${chartHeight + chartMargins.top - 5})`)
+        .attr("fontsize", 12)
         .classed('inactive', true)
         .text('Average Household Income');
 
@@ -163,16 +166,19 @@ d3.csv(csvPath).then(csvData => {
     let yLabelObject = {};
     yLabelObject['obesity'] = chartGroup.append('text')
         .attr('transform', `translate(${chartMargins.left - 88}, ${chartHeight/2}) rotate(-90)`)
+        .attr("fontsize", 12)
         .classed('active', true)
         .text('% of Households with an Obese Adult');
 
     yLabelObject['poverty'] = chartGroup.append('text')
         .attr('transform', `translate(${chartMargins.left - 99}, ${chartHeight/2}) rotate(-90)`)
+        .attr("fontsize", 12)
         .classed('inactive', true)
         .text('% of Households in Poverty');
 
     yLabelObject['smokes'] = chartGroup.append('text')
         .attr('transform', `translate(${chartMargins.left - 107}, ${chartHeight/2}) rotate(-90)`)
+        .attr("fontsize", 12)
         .classed('inactive', true)
         .text('% of Households with Smokers');
 
