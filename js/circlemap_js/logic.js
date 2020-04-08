@@ -1,5 +1,5 @@
 function markerSize(cases) {
-  return cases * 15;
+  return cases * 3;
 }
 
 
@@ -13,7 +13,7 @@ for (var i = 0; i < mapData.length; i++) {
     L.circle([mapData[i].Lat, mapData[i].Long_], {
       stroke: false,
       fillOpacity: 0.75,
-      color: "yellow",
+      color: "white",
       fillColor: "yellow",
       radius: markerSize(mapData[i].Confirmed)
     }).bindPopup("<h1>" + mapData[i].Country_Region + "</h1> <hr> <h3>Confirmed: " + mapData[i].Confirmed + "<hr> <h3>Deaths: " + mapData[i].Deaths + "</h3>")
@@ -24,7 +24,7 @@ for (var i = 0; i < mapData.length; i++) {
     L.circle([mapData[i].Lat, mapData[i].Long_], {
       stroke: false,
       fillOpacity: 0.75,
-      color: "red",
+      color: "white",
       fillColor: "red",
       radius: markerSize(mapData[i].Deaths)
     })
@@ -127,8 +127,8 @@ const worldmap = L.map("globalMap", {
   center: [
     37.09, -95.71
   ],
-  zoom: 5,
-  layers: [streetmap, countryLayer, stateLayer, countyLayer]
+  zoom: 2,
+  layers: [darkmap, countryLayer, stateLayer, countyLayer]
 });
 
 L.control.layers(baseMaps, overlayMaps).addTo(worldmap);
