@@ -82,3 +82,10 @@ body {
   background: rgba(0, 0, 0, 0.8);
   border-radius: 4px;
 }
+
+#globalMap,
+  #worldmap {
+    position: relative;
+    min-width: 400px;
+    min-height: 400px;
+  }
