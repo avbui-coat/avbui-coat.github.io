@@ -3,6 +3,9 @@ function markerSize(cases) {
 }
 
 
+
+
+
 let countryMarker = [];
 
 
@@ -13,7 +16,7 @@ for (var i = 0; i < mapData.length; i++) {
     L.circle([mapData[i].Lat, mapData[i].Long_], {
       stroke: false,
       fillOpacity: 0.75,
-      color: "white",
+      color: "yellow",
       fillColor: "yellow",
       radius: markerSize(mapData[i].Confirmed)
     }).bindPopup("<h1>" + mapData[i].Country_Region + "</h1> <hr> <h3>Confirmed: " + mapData[i].Confirmed + "<hr> <h3>Deaths: " + mapData[i].Deaths + "</h3>")
@@ -24,7 +27,7 @@ for (var i = 0; i < mapData.length; i++) {
     L.circle([mapData[i].Lat, mapData[i].Long_], {
       stroke: false,
       fillOpacity: 0.75,
-      color: "white",
+      color: "red",
       fillColor: "red",
       radius: markerSize(mapData[i].Deaths)
     })
@@ -43,7 +46,7 @@ for (var i = 0; i <stateData.length; i++) {
       fillOpacity: 0.75,
       color: "yellow", 
       fillColor: "yellow",
-      radius: (stateData[i].Confirmed * 15)
+      radius: (stateData[i].Confirmed * 3)
     }).bindPopup("<h1>" + stateData[i].State + "</h1> <hr> <h3>Confirmed: " + stateData[i].Confirmed + "<hr> <h3>Deaths: " + stateData[i].Deaths + "</h3>")
   );
 
@@ -53,7 +56,7 @@ for (var i = 0; i <stateData.length; i++) {
       fillOpacity: 0.75,
       color: "red", 
       fillColor: "red",
-      radius: (stateData[i].Deaths * 15)
+      radius: (stateData[i].Deaths * 3)
     })
   );
 }
@@ -68,8 +71,8 @@ for (var i = 0; i <countyData.length; i++) {
       fillOpacity: 0.75,
       color: "yellow", 
       fillColor: "yellow",
-      radius: (countyData[i].Confirmed * 15)
-    })
+      radius: (countyData[i].Confirmed * 5)
+    }).bindPopup("<h1>" + countyData[i].Combined_Key + "</h1> <hr> <h3>Confirmed: " + countyData[i].Confirmed + "<hr> <h3>Deaths: " + countyData[i].Deaths + "</h3>")
   );
 
   countyMarker.push(
@@ -78,7 +81,7 @@ for (var i = 0; i <countyData.length; i++) {
       fillOpacity: 0.75,
       color: "red", 
       fillColor: "red",
-      radius: (countyData[i].Deaths * 15)
+      radius: (countyData[i].Deaths * 5)
     })
   );
 }
@@ -123,10 +126,12 @@ let overlayMaps = {
 
 //adding layers and tiles to map
 
-const worldmap = L.map("globalMap", {
-  center: [51.507, 0.1278],
-    zoom: 1.5,
-  layers: [darkmap, countryLayer, stateLayer, countyLayer]
+const map = L.map("globalMap", {
+  center: [
+    37.09, -95.71
+  ],
+  zoom: 5,
+  layers: [darkmap, countryLayer]
 });
 
-L.control.layers(baseMaps, overlayMaps).addTo(worldmap);
+L.control.layers(baseMaps, overlayMaps).addTo(map);
