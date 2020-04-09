@@ -1,6 +1,6 @@
 // svg dimensions
 let svgHeight = 700,
-    svgWidth = 1000;
+    svgWidth = 700;
 
 // make responsive function
 function makeResponsive() {
