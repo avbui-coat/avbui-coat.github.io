@@ -124,10 +124,8 @@ let overlayMaps = {
 //adding layers and tiles to map
 
 const worldmap = L.map("globalMap", {
-  center: [
-    37.09, -95.71
-  ],
-  zoom: 2,
+  center: [51.507, 0.1278],
+    zoom: 1.5,
   layers: [darkmap, countryLayer, stateLayer, countyLayer]
 });
 
