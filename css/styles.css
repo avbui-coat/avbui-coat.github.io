@@ -9,6 +9,11 @@ body {
     font-size: 12px;
   }
   
+#countymap{
+    width: 600x;
+    height: 600px;
+    font-size: 12px;
+  }
 
 .active {
   font-weight: bold;
