@@ -16,7 +16,7 @@
   <script src="https://d3js.org/d3-ease.v1.min.js"></script>
   <!-- radial scale function built on d3 -->
   <script src="../js/d3-scale-radial.js"></script>
-  
+
   <!--d3 and d3 tooltips-->
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
@@ -124,6 +124,27 @@
                             </div>
                 </div></div>
             </div></div></div>
+            
+      <div class="row">
+                <div class="container-fluid">
+                    <div class="col-lg-8">
+                        <div class="panel panel-default">
+                          <div class="panel-heading">
+                            <i class="fa fa-bar-chart-o fa-fw"></i> Global Cases, Deaths, and Recoveries
+                              <div class="panel-body" id='dataGraphDiv'>
+                                <button type="button" class="btn btn-warning" id='cases-CSV-Button' data-toggle='button'>Cases</button>
+                                <button type="button" class="btn btn-danger" id='deaths-CSV-Button' data-toggle='button'>Deaths</button>
+                                <button type="button" class="btn btn-success" id='recovered-CSV-Button' data-toggle='button'>Recovered</button>
+                                
+                                <div id="dataGraph">
+                                    <script type="text/javascript" src='../js/graph.js'></script>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                     </div>
+                  </div>
+            </div>
       
 
   
